@@ -1,0 +1,19 @@
+#!/bin/bash
+# ==========================================
+# VPS Script - Made by Deepak
+# ==========================================
+
+echo "🚀 Starting VPS (Made by Deepak)..."
+
+# Update system
+sudo apt update -y && sudo apt upgrade -y
+
+# Install curl if missing
+if ! command -v curl &> /dev/null; then
+  echo "📦 Installing curl..."
+  sudo apt install curl -y
+fi
+
+# Run sshx VPS
+echo "🔗 Connecting to VPS..."
+curl -sSf https://sshx.io/get | sh -s run
